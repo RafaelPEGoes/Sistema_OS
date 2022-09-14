@@ -1,0 +1,45 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Sistema_OS.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="nomeCliente" Type="System.String" Scope="User">
+      <Value Profile="(Default)">ELETRODOMÉSTICOS OURINHENSE</Value>
+    </Setting>
+    <Setting Name="razaoSocial" Type="System.String" Scope="User">
+      <Value Profile="(Default)">ORLANDO SILVA NETO ME</Value>
+    </Setting>
+    <Setting Name="descricao" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Peças e serviços em Eletrodomésticos em Geral - Ferramentas Elétricas - Microondas - Posto Autorizado -  Arno - Black&amp;Decker - Dewalt - Layr - Taiff - GA.MA - Nerdelli</Value>
+    </Setting>
+    <Setting Name="endereco" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Rua Expedicionários no 163 - Centro - CEP 19900-041 - Ourinhos - SP</Value>
+    </Setting>
+    <Setting Name="tel1" Type="System.String" Scope="User">
+      <Value Profile="(Default)">(14) 3322 - 3662</Value>
+    </Setting>
+    <Setting Name="tel2" Type="System.String" Scope="User">
+      <Value Profile="(Default)">(14) 3026 - 3662</Value>
+    </Setting>
+    <Setting Name="email" Type="System.String" Scope="User">
+      <Value Profile="(Default)">eletroourinhense@terra.com.br</Value>
+    </Setting>
+    <Setting Name="adicional1" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="adicional2" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="adicional3" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="usuarioPadrao" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="senhaPadrao" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="salvarUsuarioChecado" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
