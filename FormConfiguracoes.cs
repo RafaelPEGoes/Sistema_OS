@@ -1,14 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace Sistema_OS
+﻿namespace Sistema_OS
 {
     public partial class FormConfiguracoes : Form
     {
@@ -30,7 +20,7 @@ namespace Sistema_OS
                 "Esse texto será exibido no Cabeçalho da sua SO.";
             toolTip.SetToolTip(txtDescricao, str);
             toolTip.ToolTipIcon = ToolTipIcon.Info;
-            
+
         }
     }
 }
