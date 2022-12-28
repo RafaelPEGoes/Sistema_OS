@@ -22,19 +22,19 @@ namespace Sistema_OS
 
         private void FormCadastroCliente_Load(object sender, EventArgs e)
         {
-            panelBotoes.Size = new Size(Convert.ToInt32(0.15 * formWidth), formHeight);
+            panelBotoes.Size = new Size((int)(0.15 * formWidth), formHeight);
             panelBotoes.Dock = DockStyle.Left;
 
             panelCampos.Size = new Size(formWidth - panelBotoes.Width, formHeight);
             panelCampos.Dock = DockStyle.Right;
 
-            int espacamentoVertical = Convert.ToInt32(0.01 * panelCampos.Height);
+            int espacamentoVertical = (int)(0.01 * panelCampos.Height);
 
-            lblNome.Location = new Point(Convert.ToInt32(0.1 * panelCampos.Width), Convert.ToInt32(0.05 * panelCampos.Height));
+            lblNome.Location = new Point((int)(0.1 * panelCampos.Width), (int)(0.05 * panelCampos.Height));
 
             int pontoInicialX = lblNome.Left;
 
-            txtNomeCliente.Width = Convert.ToInt32(0.8 * panelCampos.Width);
+            txtNomeCliente.Width = (int)(0.8 * panelCampos.Width);
             txtNomeCliente.Location = new Point(pontoInicialX, lblNome.Bottom + espacamentoVertical);
 
             lblEmail.Location = new Point(pontoInicialX, txtNomeCliente.Bottom + espacamentoVertical);
@@ -44,10 +44,10 @@ namespace Sistema_OS
 
             lblCpfCnpj.Location = new Point(pontoInicialX, txtEmail.Bottom + espacamentoVertical);
 
-            txtCpfCnpj.Width = Convert.ToInt32(0.375 * panelCampos.Width);
+            txtCpfCnpj.Width = (int)(0.375 * panelCampos.Width);
             txtCpfCnpj.Location = new Point(pontoInicialX, lblCpfCnpj.Bottom + espacamentoVertical);
 
-            lblRgInscricao.Location = new Point(pontoInicialX + Convert.ToInt32(0.425 * panelCampos.Width), lblCpfCnpj.Bounds.Y);
+            lblRgInscricao.Location = new Point(pontoInicialX + (int)(0.425 * panelCampos.Width), lblCpfCnpj.Bounds.Y);
 
             int pontoSecudarioX = lblRgInscricao.Left;
 
@@ -71,12 +71,12 @@ namespace Sistema_OS
 
             btnPesquisarCep.Location = new Point(pontoSecudarioX, txtCep.Bounds.Y);
 
-            int pontoXlblUF = pontoInicialX + txtCep.Width + Convert.ToInt32(0.05 * panelCampos.Width) + btnPesquisarCep.Width + Convert.ToInt32(0.05 * panelCampos.Width);
+            int pontoXlblUF = pontoInicialX + txtCep.Width + (int)(0.05 * panelCampos.Width) + btnPesquisarCep.Width + (int)(0.05 * panelCampos.Width);
             lblUF.Location = new Point(pontoXlblUF, lblCep.Bounds.Y);
 
             //arrumar a width para preencher até os limites definidos nos outros campos
 
-            cbUF.Width = Convert.ToInt32(txtNomeCliente.Width - pontoXlblUF);
+            cbUF.Width = (int)(txtNomeCliente.Width - pontoXlblUF);
             cbUF.Location = new Point(lblUF.Left, lblUF.Bottom + espacamentoVertical);
 
             lblCidade.Location = new Point(pontoInicialX, cbUF.Bottom + espacamentoVertical);
@@ -98,18 +98,18 @@ namespace Sistema_OS
 
             txtComplemento.Location = new Point(pontoSecudarioX, lblComplemento.Bottom + espacamentoVertical);
 
-            lblNum.Location = new Point(pontoInicialX + txtRuaLogradouro.Width + Convert.ToInt32(0.05 * panelCampos.Width) + txtComplemento.Width + Convert.ToInt32(0.05 * panelCampos.Width), lblRuaLogradouro.Bounds.Y);
+            lblNum.Location = new Point(pontoInicialX + txtRuaLogradouro.Width + (int)(0.05 * panelCampos.Width) + txtComplemento.Width + (int)(0.05 * panelCampos.Width), lblRuaLogradouro.Bounds.Y);
 
             txtNum.Location = new Point(lblNum.Left, lblNum.Bottom + espacamentoVertical);
 
-            btnCancelar.Size = new Size(Convert.ToInt32(panelCampos.Width / 2), Convert.ToInt32(0.1 * panelCampos.Height));
+            btnCancelar.Size = new Size((int)(panelCampos.Width / 2), (int)(0.1 * panelCampos.Height));
             btnCancelar.Anchor = AnchorStyles.Left | AnchorStyles.Bottom;
 
-            btnSalvar.Size = new Size(panelCampos.Width / 2, Convert.ToInt32(0.1 * panelCampos.Height));
+            btnSalvar.Size = new Size(panelCampos.Width / 2, (int)(0.1 * panelCampos.Height));
             btnSalvar.Anchor = AnchorStyles.Right | AnchorStyles.Bottom;
 
             int btnWidth = panelBotoes.Width;
-            int btnHeight = Convert.ToInt32(0.12 * panelBotoes.Height);
+            int btnHeight = (int)(0.12 * panelBotoes.Height);
 
             btnVoltar.Size = new Size(btnWidth, btnHeight);
             btnVoltar.Dock = DockStyle.Top;

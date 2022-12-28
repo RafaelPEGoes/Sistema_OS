@@ -15,8 +15,8 @@ public partial class LoginView : Form
     {
         InitializeComponent();
         this.MaximumSize = new Size(maxWidth, maxHeight);
-        formWidth = Convert.ToInt32(0.4 * maxWidth);
-        formHeight = Convert.ToInt32(0.3 * maxHeight);
+        formWidth = (int)(0.4 * maxWidth);
+        formHeight = (int)(0.3 * maxHeight);
         isLogged = false;
 
 
@@ -29,36 +29,36 @@ public partial class LoginView : Form
 
     private void LoginView_Load(object sender, EventArgs e)
     {
-        //this.MinimumSize = new Size(Convert.ToInt32(0.3* formWidth), Convert.ToInt32(0.2 * formHeight));
-        lblUsuario.Location = new Point(Convert.ToInt32(0), Convert.ToInt32(0.5 * formHeight));
+        //this.MinimumSize = new Size((int)(0.3* formWidth), (int)(0.2 * formHeight));
+        lblUsuario.Location = new Point((int)(0), (int)(0.5 * formHeight));
 
         //configuracoes de responsividade do campo txtUsuario
-        txtUsuario.Width = Convert.ToInt32(0.3 * formWidth);
-        txtUsuario.Location = new Point(Convert.ToInt32((formWidth - txtUsuario.Width) / 2), lblUsuario.Bottom + Convert.ToInt32(0.02 * formHeight));
+        txtUsuario.Width = (int)(0.3 * formWidth);
+        txtUsuario.Location = new Point((int)((formWidth - txtUsuario.Width) / 2), lblUsuario.Bottom + (int)(0.02 * formHeight));
 
-        lblSenha.Location = new Point(txtUsuario.Left, txtUsuario.Bottom + Convert.ToInt32(0.02 * formHeight));
+        lblSenha.Location = new Point(txtUsuario.Left, txtUsuario.Bottom + (int)(0.02 * formHeight));
 
         //configuracoes de responsividade do campo txtSenha
-        txtSenha.Width = Convert.ToInt32(0.3 * formWidth);
-        txtSenha.Location = new Point(Convert.ToInt32((formWidth - txtSenha.Width) / 2), lblSenha.Bottom + Convert.ToInt32(0.02 * formHeight));
+        txtSenha.Width = (int)(0.3 * formWidth);
+        txtSenha.Location = new Point((int)((formWidth - txtSenha.Width) / 2), lblSenha.Bottom + (int)(0.02 * formHeight));
 
         //configuracoes de responsivdade do btnEntrar
-        btnEntrar.Width = Convert.ToInt32(0.1 * formWidth);
-        btnEntrar.Location = new Point(txtSenha.Right - Convert.ToInt32(0.33 * txtSenha.Width), txtSenha.Bottom + Convert.ToInt32(0.04 * formHeight));
+        btnEntrar.Width = (int)(0.1 * formWidth);
+        btnEntrar.Location = new Point(txtSenha.Right - (int)(0.33 * txtSenha.Width), txtSenha.Bottom + (int)(0.04 * formHeight));
 
         //reestabelecendo o local de lblUsuario. Eixo X e inicializado com o valor 0
         //nao ha como definir somente aqui a sua localizacao, tendo em conta que
         //o txtUsuario depende de informacoes desse lbl para ser colocado no form
-        lblUsuario.Location = new Point(txtUsuario.Left, Convert.ToInt32(0.5 * formHeight));
+        lblUsuario.Location = new Point(txtUsuario.Left, (int)(0.5 * formHeight));
 
         //configuracoes de responsividade para pbLogo(PictureBox), imagem com o icone da SGRANDE no form
-        pbLogo.Width = Convert.ToInt32(0.4 * formHeight);
-        pbLogo.Height = Convert.ToInt32(0.4 * formHeight);
-        pbLogo.Location = new Point(Convert.ToInt32((formWidth - pbLogo.Width) / 2), Convert.ToInt32(0.05 * formHeight));
+        pbLogo.Width = (int)(0.4 * formHeight);
+        pbLogo.Height = (int)(0.4 * formHeight);
+        pbLogo.Location = new Point((int)((formWidth - pbLogo.Width) / 2), (int)(0.05 * formHeight));
         pbLogo.SizeMode = PictureBoxSizeMode.StretchImage;
 
         //configuracoes de responsividade de checkBoxUsuario
-        checkBoxUsuario.Location = new Point(txtUsuario.Right + Convert.ToInt32(0.01 * formWidth), txtUsuario.Bounds.Y);
+        checkBoxUsuario.Location = new Point(txtUsuario.Right + (int)(0.01 * formWidth), txtUsuario.Bounds.Y);
 
         //linka a lista de usuários validos que já acessaram o sistema e os coloca na
         //opcao de autocomplete do textbox.
@@ -75,33 +75,33 @@ public partial class LoginView : Form
 
         ////mesmas configuracoes do LoginView_Load
 
-        //lblUsuario.Location = new Point(Convert.ToInt32(0), Convert.ToInt32(0.5 * formHeight));
+        //lblUsuario.Location = new Point((int)(0), (int)(0.5 * formHeight));
 
         ////configuracoes de responsividade do campo txtUsuario
-        //txtUsuario.Width = Convert.ToInt32(0.3 * formWidth);
-        //txtUsuario.Location = new Point(Convert.ToInt32((formWidth - txtUsuario.Width) / 2), lblUsuario.Bottom + Convert.ToInt32(0.01 * formHeight));
+        //txtUsuario.Width = (int)(0.3 * formWidth);
+        //txtUsuario.Location = new Point((int)((formWidth - txtUsuario.Width) / 2), lblUsuario.Bottom + (int)(0.01 * formHeight));
 
-        //lblSenha.Location = new Point(txtUsuario.Left, txtUsuario.Bottom + Convert.ToInt32(0.01 * formHeight));
+        //lblSenha.Location = new Point(txtUsuario.Left, txtUsuario.Bottom + (int)(0.01 * formHeight));
 
         ////configuracoes de responsividade do campo txtSenha
-        //txtSenha.Width = Convert.ToInt32(0.3 * formWidth);
-        //txtSenha.Location = new Point(Convert.ToInt32((formWidth - txtSenha.Width) / 2), lblSenha.Bottom + Convert.ToInt32(0.01 * formHeight));
+        //txtSenha.Width = (int)(0.3 * formWidth);
+        //txtSenha.Location = new Point((int)((formWidth - txtSenha.Width) / 2), lblSenha.Bottom + (int)(0.01 * formHeight));
 
         ////configuracoes de responsivdade do btnEntrar
-        //btnEntrar.Width = Convert.ToInt32(0.1 * formWidth);
-        //btnEntrar.Location = new Point(txtSenha.Right - Convert.ToInt32(0.33 * txtSenha.Width), txtSenha.Bottom + Convert.ToInt32(0.02 * formHeight));
+        //btnEntrar.Width = (int)(0.1 * formWidth);
+        //btnEntrar.Location = new Point(txtSenha.Right - (int)(0.33 * txtSenha.Width), txtSenha.Bottom + (int)(0.02 * formHeight));
 
         ////reestabelecendo o local de lblUsuario. Eixo X e inicializado com o valor 0
         ////nao ha como definir somente aqui a sua localizacao, tendo em conta que
         ////o txtUsuario depende de informacoes desse lbl para ser colocado no form
-        //lblUsuario.Location = new Point(txtUsuario.Left, Convert.ToInt32(0.5 * formHeight));
+        //lblUsuario.Location = new Point(txtUsuario.Left, (int)(0.5 * formHeight));
 
-        //checkBoxUsuario.Location = new Point(txtUsuario.Right + Convert.ToInt32(0.01 * formWidth), txtUsuario.Bounds.Y);
+        //checkBoxUsuario.Location = new Point(txtUsuario.Right + (int)(0.01 * formWidth), txtUsuario.Bounds.Y);
 
         ////configuracoes de responsividade para pbLogo(PictureBox), imagem com o icone da SGRANDE no form
-        //pbLogo.Width = Convert.ToInt32(0.4 * formHeight);
-        //pbLogo.Height = Convert.ToInt32(0.4 * formHeight);
-        //pbLogo.Location = new Point(Convert.ToInt32((formWidth - pbLogo.Width) / 2), Convert.ToInt32(0.05 * formHeight));
+        //pbLogo.Width = (int)(0.4 * formHeight);
+        //pbLogo.Height = (int)(0.4 * formHeight);
+        //pbLogo.Location = new Point((int)((formWidth - pbLogo.Width) / 2), (int)(0.05 * formHeight));
         //pbLogo.SizeMode = PictureBoxSizeMode.StretchImage;
     }
 
@@ -306,33 +306,33 @@ public partial class LoginView : Form
 
         ////mesmas configuracoes do LoginView_Load
 
-        //lblUsuario.Location = new Point(Convert.ToInt32(0), Convert.ToInt32(0.5 * formHeight));
+        //lblUsuario.Location = new Point((int)(0), (int)(0.5 * formHeight));
 
         ////configuracoes de responsividade do campo txtUsuario
-        //txtUsuario.Width = Convert.ToInt32(0.3 * formWidth);
-        //txtUsuario.Location = new Point(Convert.ToInt32((formWidth - txtUsuario.Width) / 2), lblUsuario.Bottom + Convert.ToInt32(0.01 * formHeight));
+        //txtUsuario.Width = (int)(0.3 * formWidth);
+        //txtUsuario.Location = new Point((int)((formWidth - txtUsuario.Width) / 2), lblUsuario.Bottom + (int)(0.01 * formHeight));
 
-        //lblSenha.Location = new Point(txtUsuario.Left, txtUsuario.Bottom + Convert.ToInt32(0.01 * formHeight));
+        //lblSenha.Location = new Point(txtUsuario.Left, txtUsuario.Bottom + (int)(0.01 * formHeight));
 
         ////configuracoes de responsividade do campo txtSenha
-        //txtSenha.Width = Convert.ToInt32(0.3 * formWidth);
-        //txtSenha.Location = new Point(Convert.ToInt32((formWidth - txtSenha.Width) / 2), lblSenha.Bottom + Convert.ToInt32(0.01 * formHeight));
+        //txtSenha.Width = (int)(0.3 * formWidth);
+        //txtSenha.Location = new Point((int)((formWidth - txtSenha.Width) / 2), lblSenha.Bottom + (int)(0.01 * formHeight));
 
         ////configuracoes de responsivdade do btnEntrar
-        //btnEntrar.Width = Convert.ToInt32(0.1 * formWidth);
-        //btnEntrar.Location = new Point(txtSenha.Right - Convert.ToInt32(0.33 * txtSenha.Width), txtSenha.Bottom + Convert.ToInt32(0.02 * formHeight));
+        //btnEntrar.Width = (int)(0.1 * formWidth);
+        //btnEntrar.Location = new Point(txtSenha.Right - (int)(0.33 * txtSenha.Width), txtSenha.Bottom + (int)(0.02 * formHeight));
 
         ////reestabelecendo o local de lblUsuario. Eixo X e inicializado com o valor 0
         ////nao ha como definir somente aqui a sua localizacao, tendo em conta que
         ////o txtUsuario depende de informacoes desse lbl para ser colocado no form
-        //lblUsuario.Location = new Point(txtUsuario.Left, Convert.ToInt32(0.5 * formHeight));
+        //lblUsuario.Location = new Point(txtUsuario.Left, (int)(0.5 * formHeight));
 
-        //checkBoxUsuario.Location = new Point(txtUsuario.Right + Convert.ToInt32(0.01 * formWidth), txtUsuario.Bounds.Y);
+        //checkBoxUsuario.Location = new Point(txtUsuario.Right + (int)(0.01 * formWidth), txtUsuario.Bounds.Y);
 
         ////configuracoes de responsividade para pbLogo(PictureBox), imagem com o icone da SGRANDE no form
-        //pbLogo.Width = Convert.ToInt32(0.4 * formHeight);
-        //pbLogo.Height = Convert.ToInt32(0.4 * formHeight);
-        //pbLogo.Location = new Point(Convert.ToInt32((formWidth - pbLogo.Width) / 2), Convert.ToInt32(0.05 * formHeight));
+        //pbLogo.Width = (int)(0.4 * formHeight);
+        //pbLogo.Height = (int)(0.4 * formHeight);
+        //pbLogo.Location = new Point((int)((formWidth - pbLogo.Width) / 2), (int)(0.05 * formHeight));
         //pbLogo.SizeMode = PictureBoxSizeMode.StretchImage;
     }
 
@@ -343,33 +343,33 @@ public partial class LoginView : Form
 
         //mesmas configuracoes do LoginView_Load
 
-        lblUsuario.Location = new Point(Convert.ToInt32(0), Convert.ToInt32(0.5 * formHeight));
+        lblUsuario.Location = new Point((int)(0), (int)(0.5 * formHeight));
 
         //configuracoes de responsividade do campo txtUsuario
-        txtUsuario.Width = Convert.ToInt32(0.3 * formWidth);
-        txtUsuario.Location = new Point(Convert.ToInt32((formWidth - txtUsuario.Width) / 2), lblUsuario.Bottom + Convert.ToInt32(0.01 * formHeight));
+        txtUsuario.Width = (int)(0.3 * formWidth);
+        txtUsuario.Location = new Point((int)((formWidth - txtUsuario.Width) / 2), lblUsuario.Bottom + (int)(0.01 * formHeight));
 
-        lblSenha.Location = new Point(txtUsuario.Left, txtUsuario.Bottom + Convert.ToInt32(0.01 * formHeight));
+        lblSenha.Location = new Point(txtUsuario.Left, txtUsuario.Bottom + (int)(0.01 * formHeight));
 
         //configuracoes de responsividade do campo txtSenha
-        txtSenha.Width = Convert.ToInt32(0.3 * formWidth);
-        txtSenha.Location = new Point(Convert.ToInt32((formWidth - txtSenha.Width) / 2), lblSenha.Bottom + Convert.ToInt32(0.01 * formHeight));
+        txtSenha.Width = (int)(0.3 * formWidth);
+        txtSenha.Location = new Point((int)((formWidth - txtSenha.Width) / 2), lblSenha.Bottom + (int)(0.01 * formHeight));
 
         //configuracoes de responsivdade do btnEntrar
-        btnEntrar.Width = Convert.ToInt32(0.1 * formWidth);
-        btnEntrar.Location = new Point(txtSenha.Right - Convert.ToInt32(0.33 * txtSenha.Width), txtSenha.Bottom + Convert.ToInt32(0.02 * formHeight));
+        btnEntrar.Width = (int)(0.1 * formWidth);
+        btnEntrar.Location = new Point(txtSenha.Right - (int)(0.33 * txtSenha.Width), txtSenha.Bottom + (int)(0.02 * formHeight));
 
         //reestabelecendo o local de lblUsuario. Eixo X e inicializado com o valor 0
         //nao ha como definir somente aqui a sua localizacao, tendo em conta que
         //o txtUsuario depende de informacoes desse lbl para ser colocado no form
-        lblUsuario.Location = new Point(txtUsuario.Left, Convert.ToInt32(0.5 * formHeight));
+        lblUsuario.Location = new Point(txtUsuario.Left, (int)(0.5 * formHeight));
 
-        checkBoxUsuario.Location = new Point(txtUsuario.Right + Convert.ToInt32(0.01 * formWidth), txtUsuario.Bounds.Y);
+        checkBoxUsuario.Location = new Point(txtUsuario.Right + (int)(0.01 * formWidth), txtUsuario.Bounds.Y);
 
         //configuracoes de responsividade para pbLogo(PictureBox), imagem com o icone da SGRANDE no form
-        pbLogo.Width = Convert.ToInt32(0.4 * formHeight);
-        pbLogo.Height = Convert.ToInt32(0.4 * formHeight);
-        pbLogo.Location = new Point(Convert.ToInt32((formWidth - pbLogo.Width) / 2), Convert.ToInt32(0.05 * formHeight));
+        pbLogo.Width = (int)(0.4 * formHeight);
+        pbLogo.Height = (int)(0.4 * formHeight);
+        pbLogo.Location = new Point((int)((formWidth - pbLogo.Width) / 2), (int)(0.05 * formHeight));
         pbLogo.SizeMode = PictureBoxSizeMode.StretchImage;
     }
 }

@@ -4,16 +4,19 @@
     <Compile Update="FormAparelhosCliente.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="FormBuscarOS.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="FormCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="FormConfiguracoes.cs">
+    <Compile Update="FormConfiguracoes2.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="FormEmissaoOS.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="FormNovaOS.cs">
+    <Compile Update="FormExtrato.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="FormNovaOS2.cs">
@@ -28,11 +31,19 @@
     <Compile Update="FormPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="FormStatusOS.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="LoginView.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Impressao.cs">
       <SubType>Form</SubType>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="LoginView.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>

@@ -113,6 +113,7 @@
             this.btnSalvarImprimir.TabIndex = 4;
             this.btnSalvarImprimir.Text = "Salvar e Imprimir";
             this.btnSalvarImprimir.UseVisualStyleBackColor = true;
+            this.btnSalvarImprimir.Click += new System.EventHandler(this.btnSalvarImprimir_Click);
             // 
             // btnSalvar
             // 
@@ -123,6 +124,7 @@
             this.btnSalvar.TabIndex = 3;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // btnCancelar
             // 
@@ -133,6 +135,7 @@
             this.btnCancelar.TabIndex = 2;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // gbVoltagem
             // 
@@ -327,17 +330,21 @@
             // 
             // txtEmail
             // 
+            this.txtEmail.Enabled = false;
             this.txtEmail.Location = new System.Drawing.Point(31, 210);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(309, 27);
             this.txtEmail.TabIndex = 14;
+            this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
             // 
             // txtCEP
             // 
+            this.txtCEP.Enabled = false;
             this.txtCEP.Location = new System.Drawing.Point(492, 157);
             this.txtCEP.Name = "txtCEP";
             this.txtCEP.Size = new System.Drawing.Size(198, 27);
             this.txtCEP.TabIndex = 13;
+            this.txtCEP.TextChanged += new System.EventHandler(this.txtCEP_TextChanged);
             // 
             // lblCEP
             // 
@@ -359,19 +366,23 @@
             // 
             // cbUF
             // 
+            this.cbUF.Enabled = false;
             this.cbUF.FormattingEnabled = true;
             this.cbUF.Location = new System.Drawing.Point(370, 156);
             this.cbUF.Margin = new System.Windows.Forms.Padding(10);
             this.cbUF.Name = "cbUF";
             this.cbUF.Size = new System.Drawing.Size(97, 28);
             this.cbUF.TabIndex = 10;
+            this.cbUF.SelectedIndexChanged += new System.EventHandler(this.cbUF_SelectedIndexChanged);
             // 
             // txtCidade
             // 
+            this.txtCidade.Enabled = false;
             this.txtCidade.Location = new System.Drawing.Point(31, 157);
             this.txtCidade.Name = "txtCidade";
             this.txtCidade.Size = new System.Drawing.Size(309, 27);
             this.txtCidade.TabIndex = 9;
+            this.txtCidade.TextChanged += new System.EventHandler(this.txtCidade_TextChanged);
             // 
             // lblCidade
             // 
@@ -384,10 +395,12 @@
             // 
             // txtBairro
             // 
+            this.txtBairro.Enabled = false;
             this.txtBairro.Location = new System.Drawing.Point(370, 104);
             this.txtBairro.Name = "txtBairro";
             this.txtBairro.Size = new System.Drawing.Size(320, 27);
             this.txtBairro.TabIndex = 7;
+            this.txtBairro.TextChanged += new System.EventHandler(this.txtBairro_TextChanged);
             // 
             // lblBairro
             // 
@@ -400,10 +413,12 @@
             // 
             // txtEndereco
             // 
+            this.txtEndereco.Enabled = false;
             this.txtEndereco.Location = new System.Drawing.Point(31, 104);
             this.txtEndereco.Name = "txtEndereco";
             this.txtEndereco.Size = new System.Drawing.Size(309, 27);
             this.txtEndereco.TabIndex = 5;
+            this.txtEndereco.TextChanged += new System.EventHandler(this.txtEndereco_TextChanged);
             // 
             // lblEndereco
             // 
@@ -416,10 +431,12 @@
             // 
             // txtTel
             // 
+            this.txtTel.Enabled = false;
             this.txtTel.Location = new System.Drawing.Point(370, 210);
             this.txtTel.Name = "txtTel";
             this.txtTel.Size = new System.Drawing.Size(320, 27);
             this.txtTel.TabIndex = 3;
+            this.txtTel.TextChanged += new System.EventHandler(this.txtTel_TextChanged);
             // 
             // lblTel
             // 
@@ -432,10 +449,12 @@
             // 
             // txtNomeCliente
             // 
+            this.txtNomeCliente.Enabled = false;
             this.txtNomeCliente.Location = new System.Drawing.Point(31, 51);
             this.txtNomeCliente.Name = "txtNomeCliente";
             this.txtNomeCliente.Size = new System.Drawing.Size(659, 27);
             this.txtNomeCliente.TabIndex = 1;
+            this.txtNomeCliente.TextChanged += new System.EventHandler(this.txtNomeCliente_TextChanged);
             // 
             // lblNomeCliente
             // 
@@ -485,6 +504,7 @@
             // 
             // txtNumSerie
             // 
+            this.txtNumSerie.Enabled = false;
             this.txtNumSerie.Location = new System.Drawing.Point(382, 104);
             this.txtNumSerie.Name = "txtNumSerie";
             this.txtNumSerie.Size = new System.Drawing.Size(144, 27);
@@ -501,6 +521,7 @@
             // 
             // txtModelo
             // 
+            this.txtModelo.Enabled = false;
             this.txtModelo.Location = new System.Drawing.Point(31, 104);
             this.txtModelo.Name = "txtModelo";
             this.txtModelo.Size = new System.Drawing.Size(309, 27);
@@ -517,6 +538,7 @@
             // 
             // txtFabricante
             // 
+            this.txtFabricante.Enabled = false;
             this.txtFabricante.Location = new System.Drawing.Point(385, 51);
             this.txtFabricante.Name = "txtFabricante";
             this.txtFabricante.Size = new System.Drawing.Size(305, 27);
@@ -533,6 +555,7 @@
             // 
             // txtGrupo
             // 
+            this.txtGrupo.Enabled = false;
             this.txtGrupo.Location = new System.Drawing.Point(31, 51);
             this.txtGrupo.Name = "txtGrupo";
             this.txtGrupo.Size = new System.Drawing.Size(309, 27);
@@ -623,6 +646,7 @@
             this.Name = "FormEmissaoOS";
             this.Text = "FormEmissaoOS";
             this.Load += new System.EventHandler(this.FormEmissaoOS_Load);
+            this.Shown += new System.EventHandler(this.FormEmissaoOS_Shown);
             this.ResizeEnd += new System.EventHandler(this.FormEmissaoOS_ResizeEnd);
             this.Resize += new System.EventHandler(this.FormEmissaoOS_Resize);
             this.panelDireito.ResumeLayout(false);

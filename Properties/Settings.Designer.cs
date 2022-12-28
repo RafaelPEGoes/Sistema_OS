@@ -193,5 +193,27 @@ namespace Sistema_OS.Properties {
                 this["listaUsuariosValidosSalvos"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.Drawing.Font fontTitulo {
+            get {
+                return ((global::System.Drawing.Font)(this["fontTitulo"]));
+            }
+            set {
+                this["fontTitulo"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.Drawing.Font fontCabecalho {
+            get {
+                return ((global::System.Drawing.Font)(this["fontCabecalho"]));
+            }
+            set {
+                this["fontCabecalho"] = value;
+            }
+        }
     }
 }

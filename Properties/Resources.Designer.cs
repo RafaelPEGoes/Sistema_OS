@@ -63,9 +63,9 @@ namespace Sistema_OS.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Sgrande {
+        internal static System.Drawing.Bitmap SGrande {
             get {
-                object obj = ResourceManager.GetObject("Sgrande", resourceCulture);
+                object obj = ResourceManager.GetObject("SGrande", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -31,7 +31,6 @@
             this.panelDireito = new System.Windows.Forms.Panel();
             this.tabelaClientes = new System.Windows.Forms.DataGridView();
             this.container = new System.Windows.Forms.SplitContainer();
-            this.btnPesquisar = new System.Windows.Forms.Button();
             this.lblNome = new System.Windows.Forms.Label();
             this.txtCliente = new System.Windows.Forms.TextBox();
             this.btnEditar = new System.Windows.Forms.Button();
@@ -58,6 +57,7 @@
             this.tabelaClientes.Location = new System.Drawing.Point(18, 12);
             this.tabelaClientes.MultiSelect = false;
             this.tabelaClientes.Name = "tabelaClientes";
+            this.tabelaClientes.ReadOnly = true;
             this.tabelaClientes.RowHeadersVisible = false;
             this.tabelaClientes.RowHeadersWidth = 51;
             this.tabelaClientes.RowTemplate.Height = 29;
@@ -65,6 +65,7 @@
             this.tabelaClientes.Size = new System.Drawing.Size(505, 424);
             this.tabelaClientes.TabIndex = 0;
             this.tabelaClientes.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tabelaClientes_CellContentDoubleClick);
+            this.tabelaClientes.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tabelaClientes_KeyDown);
             // 
             // container
             // 
@@ -74,7 +75,6 @@
             // 
             // container.Panel1
             // 
-            this.container.Panel1.Controls.Add(this.btnPesquisar);
             this.container.Panel1.Controls.Add(this.lblNome);
             this.container.Panel1.Controls.Add(this.txtCliente);
             // 
@@ -85,15 +85,6 @@
             this.container.Size = new System.Drawing.Size(268, 448);
             this.container.SplitterDistance = 85;
             this.container.TabIndex = 2;
-            // 
-            // btnPesquisar
-            // 
-            this.btnPesquisar.Location = new System.Drawing.Point(165, 33);
-            this.btnPesquisar.Name = "btnPesquisar";
-            this.btnPesquisar.Size = new System.Drawing.Size(94, 29);
-            this.btnPesquisar.TabIndex = 2;
-            this.btnPesquisar.Text = "Pesquisar";
-            this.btnPesquisar.UseVisualStyleBackColor = true;
             // 
             // lblNome
             // 
@@ -108,9 +99,10 @@
             // 
             this.txtCliente.Location = new System.Drawing.Point(12, 35);
             this.txtCliente.Name = "txtCliente";
-            this.txtCliente.Size = new System.Drawing.Size(147, 27);
+            this.txtCliente.Size = new System.Drawing.Size(247, 27);
             this.txtCliente.TabIndex = 0;
             this.txtCliente.TextChanged += new System.EventHandler(this.txtCliente_TextChanged);
+            this.txtCliente.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCliente_KeyDown);
             // 
             // btnEditar
             // 
@@ -141,6 +133,7 @@
             this.Name = "FormNovaOS2";
             this.Text = "FormNovaOS2";
             this.Load += new System.EventHandler(this.FormNovaOS2_Load);
+            this.Shown += new System.EventHandler(this.FormNovaOS2_Shown);
             this.ResizeEnd += new System.EventHandler(this.FormNovaOS2_ResizeEnd);
             this.SizeChanged += new System.EventHandler(this.FormNovaOS2_SizeChanged);
             this.Resize += new System.EventHandler(this.FormNovaOS2_Resize);
@@ -159,7 +152,6 @@
 
         private Panel panelDireito;
         private SplitContainer container;
-        private Button btnPesquisar;
         private Label lblNome;
         private TextBox textBox1;
         private Button btnEditar;

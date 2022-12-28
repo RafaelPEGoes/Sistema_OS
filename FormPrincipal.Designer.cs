@@ -41,6 +41,7 @@
             this.visitasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.financeiroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelEsquerdo = new System.Windows.Forms.Panel();
+            this.btnBuscarOS = new System.Windows.Forms.Button();
             this.btnPesquisaCliente = new System.Windows.Forms.Button();
             this.btnNovaOS = new System.Windows.Forms.Button();
             this.btnNovoCliente = new System.Windows.Forms.Button();
@@ -72,6 +73,7 @@
             this.opçõesToolStripMenuItem.Name = "opçõesToolStripMenuItem";
             this.opçõesToolStripMenuItem.Size = new System.Drawing.Size(74, 24);
             this.opçõesToolStripMenuItem.Text = "Opções";
+            this.opçõesToolStripMenuItem.Click += new System.EventHandler(this.opçõesToolStripMenuItem_Click);
             // 
             // clienteOSToolStripMenuItem
             // 
@@ -145,6 +147,7 @@
             // 
             // panelEsquerdo
             // 
+            this.panelEsquerdo.Controls.Add(this.btnBuscarOS);
             this.panelEsquerdo.Controls.Add(this.btnPesquisaCliente);
             this.panelEsquerdo.Controls.Add(this.btnNovaOS);
             this.panelEsquerdo.Controls.Add(this.btnNovoCliente);
@@ -153,6 +156,18 @@
             this.panelEsquerdo.Name = "panelEsquerdo";
             this.panelEsquerdo.Size = new System.Drawing.Size(250, 417);
             this.panelEsquerdo.TabIndex = 1;
+            // 
+            // btnBuscarOS
+            // 
+            this.btnBuscarOS.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnBuscarOS.Location = new System.Drawing.Point(4, 278);
+            this.btnBuscarOS.Name = "btnBuscarOS";
+            this.btnBuscarOS.Size = new System.Drawing.Size(243, 29);
+            this.btnBuscarOS.TabIndex = 4;
+            this.btnBuscarOS.Text = "Buscar OS";
+            this.btnBuscarOS.UseVisualStyleBackColor = true;
+            this.btnBuscarOS.Click += new System.EventHandler(this.btnBuscarOS_Click);
             // 
             // btnPesquisaCliente
             // 
@@ -164,6 +179,7 @@
             this.btnPesquisaCliente.TabIndex = 3;
             this.btnPesquisaCliente.Text = "Pesquisar Cliente";
             this.btnPesquisaCliente.UseVisualStyleBackColor = true;
+            this.btnPesquisaCliente.Click += new System.EventHandler(this.btnPesquisaCliente_Click);
             // 
             // btnNovaOS
             // 
@@ -191,7 +207,7 @@
             // 
             // pbLogo
             // 
-            this.pbLogo.Image = global::Sistema_OS.Properties.Resources.Sgrande;
+            this.pbLogo.Image = global::Sistema_OS.Properties.Resources.SGrande;
             this.pbLogo.Location = new System.Drawing.Point(0, 0);
             this.pbLogo.Name = "pbLogo";
             this.pbLogo.Size = new System.Drawing.Size(250, 174);
@@ -237,5 +253,6 @@
         private Button btnPesquisaCliente;
         private Button btnNovaOS;
         private Button btnNovoCliente;
+        private Button btnBuscarOS;
     }
 }

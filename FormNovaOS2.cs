@@ -23,22 +23,24 @@ namespace Sistema_OS
             InitializeComponent();
 
             this.MaximumSize = new Size(maxWidth, maxHeight);
-            formWidth = Convert.ToInt32(0.6 * maxWidth);
-            formHeight = Convert.ToInt32(0.5 * maxHeight);
+            formWidth = (int)(0.6 * maxWidth);
+            formHeight = (int)(0.5 * maxHeight);
             this.Width = formWidth;
             this.Height = formHeight;
             this.StartPosition = FormStartPosition.CenterScreen;
+            tabelaClientes.Columns.Add("ID", "ID");
             tabelaClientes.Columns.Add("NOME", "Cliente");
             tabelaClientes.Columns.Add("DATA", "Data");
             tabelaClientes.Columns.Add("CIDADE", "Cidade");
             tabelaClientes.Columns.Add("TELEFONE", "Telefone");
             tabelaClientes.Columns.Add("UF", "UF");
+
         }
 
         private void FormNovaOS2_Load(object sender, EventArgs e)
         {
-            container.SplitterDistance = Convert.ToInt32(0.15 * formHeight);
-            container.Size = new Size(Convert.ToInt32(0.30 * formWidth), formHeight);
+            container.SplitterDistance = (int)(0.15 * formHeight);
+            container.Size = new Size((int)(0.30 * formWidth), formHeight);
             container.Panel1.BackColor = Color.BlueViolet;
             container.Panel2.BackColor = Color.PaleVioletRed;
 
@@ -47,29 +49,27 @@ namespace Sistema_OS
             panelDireito.Location = new Point(container.Right, 0);
 
             btnNovo.Dock = DockStyle.Top;
-            btnNovo.Size = new Size(container.Width, Convert.ToInt32(0.1 * formHeight));
+            btnNovo.Size = new Size(container.Width, (int)(0.1 * formHeight));
 
-            btnEditar.Size = new Size(container.Width, Convert.ToInt32(0.1 * formHeight));
+            btnEditar.Size = new Size(container.Width, (int)(0.1 * formHeight));
             btnEditar.Dock = DockStyle.Top;
 
-            lblNome.Location = new Point(0, Convert.ToInt32(0.1 * container.Panel1.Height));
+            txtCliente.Width = (int)(0.8 * container.Width);
+            txtCliente.Location = new Point((int)((container.Panel1.Width - txtCliente.Width) / 2), (int)((container.Panel1.Height - txtCliente.Height) / 2));
 
-            txtCliente.Location = new Point(0, lblNome.Bottom + Convert.ToInt32(0.05 * container.Panel1.Height));
-            txtCliente.Width = Convert.ToInt32(0.6 * container.Width);
-
-            btnPesquisar.Location = new Point(txtCliente.Right + Convert.ToInt32(0.05 * container.Width), txtCliente.Top);
+            lblNome.Location = new Point(txtCliente.Left, txtCliente.Bounds.Y - lblNome.Height - (int)(0.05 * container.Panel1.Height));
 
             txtCliente.AutoCompleteMode = AutoCompleteMode.Suggest;
             txtCliente.AutoCompleteSource = AutoCompleteSource.CustomSource;
             txtCliente.AutoCompleteCustomSource = GetClientes();
 
             //configuracoes de responsividade da tabela clientes
-            tabelaClientes.Location = new Point(Convert.ToInt32(0.02 * panelDireito.Width), Convert.ToInt32(0.02 * formHeight));
-            tabelaClientes.Size = new Size(Convert.ToInt32(0.95 * panelDireito.Width), Convert.ToInt32(0.88 * panelDireito.Height));
-            tabelaClientes.Columns["DATA"].Width = Convert.ToInt32(0.2 * tabelaClientes.Width);
-            tabelaClientes.Columns["CIDADE"].Width = Convert.ToInt32(0.2 * tabelaClientes.Width);
-            tabelaClientes.Columns["TELEFONE"].Width = Convert.ToInt32(0.2 * tabelaClientes.Width);
-            tabelaClientes.Columns["UF"].Width = Convert.ToInt32(0.1 * tabelaClientes.Width);
+            tabelaClientes.Location = new Point((int)(0.02 * panelDireito.Width), (int)(0.02 * formHeight));
+            tabelaClientes.Size = new Size((int)(0.95 * panelDireito.Width), (int)(0.88 * panelDireito.Height));
+            tabelaClientes.Columns["DATA"].Width = (int)(0.2 * tabelaClientes.Width);
+            tabelaClientes.Columns["CIDADE"].Width = (int)(0.2 * tabelaClientes.Width);
+            tabelaClientes.Columns["TELEFONE"].Width = (int)(0.2 * tabelaClientes.Width);
+            tabelaClientes.Columns["UF"].Width = (int)(0.1 * tabelaClientes.Width);
             tabelaClientes.Columns["NOME"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             tabelaClientes.Columns["DATA"].DefaultCellStyle.Format = "dd/MM/yyyy";
 
@@ -109,7 +109,7 @@ namespace Sistema_OS
 
             using (FbConnection conn = dbf.Connection())
             {
-                string query = "SELECT NOME, DATA_CADASTRO, CIDADE1, TELEFONE1, UF1 FROM CLIENTE WHERE NOME CONTAINING @NOME";
+                string query = "SELECT CODIGO_CLIENTE, NOME, DATA_CADASTRO, CIDADE1, TELEFONE1, UF1 FROM CLIENTE WHERE NOME CONTAINING @NOME";
 
                 using (FbCommand cmd = new FbCommand(query, conn))
                 {
@@ -122,13 +122,16 @@ namespace Sistema_OS
                         {
                             while (reader.Read())
                             {
-                                int rowIndex = tabelaClientes.Rows.Add();
 
-                                tabelaClientes.Rows[rowIndex].Cells["NOME"].Value = reader.GetString(0);
-                                tabelaClientes.Rows[rowIndex].Cells["DATA"].Value = reader.GetString(1);
-                                tabelaClientes.Rows[rowIndex].Cells["CIDADE"].Value = reader.GetString(2);
-                                tabelaClientes.Rows[rowIndex].Cells["TELEFONE"].Value = reader.GetString(3);
-                                tabelaClientes.Rows[rowIndex].Cells["UF"].Value = reader.GetString(4);
+                                //talvez seja esse int que esteja estourando a memória da aplicação
+                                //achar outros meios de preencher com DataReader e iterar sobre os itens no datagrid
+                                int rowIndex = tabelaClientes.Rows.Add();
+                                tabelaClientes.Rows[rowIndex].Cells["ID"].Value = reader.GetString(0);
+                                tabelaClientes.Rows[rowIndex].Cells["NOME"].Value = reader.GetString(1);
+                                tabelaClientes.Rows[rowIndex].Cells["DATA"].Value = reader.GetString(2);
+                                tabelaClientes.Rows[rowIndex].Cells["CIDADE"].Value = reader.GetString(3);
+                                tabelaClientes.Rows[rowIndex].Cells["TELEFONE"].Value = reader.GetString(4);
+                                tabelaClientes.Rows[rowIndex].Cells["UF"].Value = reader.GetString(5);
 
                                 rowIndex++;
 
@@ -176,8 +179,33 @@ namespace Sistema_OS
         private void tabelaClientes_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             FormClienteDefinitivo cliente = new();
-            cliente.nomeCliente = tabelaClientes.CurrentRow.Cells["NOME"].Value.ToString();
+            cliente.codigoCliente = Convert.ToInt32(tabelaClientes.CurrentRow.Cells["ID"].Value);
+            cliente.nomeCliente = tabelaClientes.CurrentRow.Cells["NOME"].Value.ToString(); 
             cliente.ShowDialog();
+        }
+
+        private void FormNovaOS2_Shown(object sender, EventArgs e)
+        {
+            txtCliente.Focus();
+        }
+
+        private void txtCliente_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                tabelaClientes.Focus();
+            }
+        }
+
+        private void tabelaClientes_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                FormClienteDefinitivo cliente = new();
+                cliente.codigoCliente = Convert.ToInt32(tabelaClientes.CurrentRow.Cells["ID"].Value);
+                cliente.nomeCliente = tabelaClientes.CurrentRow.Cells["NOME"].Value.ToString();
+                cliente.ShowDialog();
+            }
         }
     }
 }
