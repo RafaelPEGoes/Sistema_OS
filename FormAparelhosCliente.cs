@@ -9,6 +9,7 @@ namespace Sistema_OS
         public int formHeight;
         private int maxWidth = Screen.PrimaryScreen.WorkingArea.Width;
         private int maxHeight = Screen.PrimaryScreen.WorkingArea.Height;
+        public FormClienteDefinitivo formClienteDefinitivo;
         public FormAparelhosCliente()
         {
             InitializeComponent();
@@ -18,32 +19,33 @@ namespace Sistema_OS
             tabelaAparelhos.Columns.Add("MARCA", "Marca");
             tabelaAparelhos.Columns.Add("MODELO", "Modelo");
             tabelaAparelhos.Columns.Add("SERIE", "Série");
-            
+            formClienteDefinitivo = (FormClienteDefinitivo) Application.OpenForms["FormClienteDefinitivo"];
         }
 
         public void FormAparelhosCliente_Load(object sender, EventArgs e)
         {
-            int columnsWidth = Convert.ToInt32(0.25 * tabelaAparelhos.Width);
+            int columnsWidth = (int)(0.25 * tabelaAparelhos.Width);
             tabelaAparelhos.Columns["APARELHO"].Width = columnsWidth;
             tabelaAparelhos.Columns["MARCA"].Width = columnsWidth;
             tabelaAparelhos.Columns["MODELO"].Width = columnsWidth;
             tabelaAparelhos.Columns["SERIE"].Width = columnsWidth;
 
-            int btnWidth = Convert.ToInt32(panelBotoes.Width / 4);
+            int btnWidth = (int)(panelBotoes.Width / 4);
             btnAdicionar.Width = btnWidth;
             btnEditar.Width = btnWidth;
             btnExcluir.Width = btnWidth;
             btnProximo.Width = btnWidth;
 
-            panelSuperior.Height = Convert.ToInt32(0.15 * formHeight);
-            panelDataGrid.Height = Convert.ToInt32(0.65 * formHeight);
-            panelBotoes.Height = Convert.ToInt32(0.1 * formHeight);
+            panelSuperior.Height = (int)(0.15 * formHeight);
+            panelDataGrid.Height = (int)(0.65 * formHeight);
+            panelBotoes.Height = (int)(0.1 * formHeight);
 
-            lblEspecificacoes.Location = new Point(tabelaAparelhos.Left, Convert.ToInt32((panelSuperior.Height - txtEspecificacoes.Height) / 2));
+            lblEspecificacoes.Location = new Point(tabelaAparelhos.Left, (int)((panelSuperior.Height - txtEspecificacoes.Height) / 2));
 
-            txtEspecificacoes.Width = Convert.ToInt32(0.5 * formWidth);
-            txtEspecificacoes.Location = new Point(lblEspecificacoes.Left, lblEspecificacoes.Bottom + Convert.ToInt32(0.01 * formHeight));
-            
+            txtEspecificacoes.Width = (int)(0.5 * formWidth);
+            txtEspecificacoes.Location = new Point(lblEspecificacoes.Left, lblEspecificacoes.Bottom + (int)(0.01 * formHeight));
+
+            RetrieveClientDevices();
         }
 
         private void FormAparelhosCliente_ResizeEnd(object sender, EventArgs e)
@@ -67,6 +69,33 @@ namespace Sistema_OS
 
             FormClienteDefinitivo form = (FormClienteDefinitivo)Application.OpenForms["FormClienteDefinitivo"];
             form.LoadFinalForm();
+        }
+
+        private void RetrieveClientDevices()
+        {
+            DbFactory dbf = new();
+
+            using (FbConnection conn = dbf.Connection())
+            {
+                string query = "SELECT GRUPO.NOME, " +
+                    "FABRICANTE.NOME, " +
+                    "OS_APARELHO_CLIENTE.DESCRICAO, " +
+                    "OS_APARELHO_CLIENTE.NUMERO_SERIE_PRODUTO " +
+                    "FROM OS_APARELHO_CLIENTE " +
+                    "INNER JOIN GRUPO " +
+                    "ON OS_APARELHO_CLIENTE.CODIGO_GRUPO = GRUPO.CODIGO_GRUPO " +
+                    "INNER JOIN FABRICANTE " +
+                    "ON OS_APARELHO_CLIENTE.CODIGO_FABRICANTE = FABRICANTE.CODIGO_FABRICANTE " +
+                    "WHERE OS_APARELHO_CLIENTE.CODIGO_CLIENTE = @CODIGO_CLIENTE";
+
+                using(FbCommand cmd = new(query, conn))
+                {
+                    conn.Open();
+                    cmd.Parameters.AddWithValue("CODIGO_CLIENTE", formClienteDefinitivo.codigoCliente);
+
+                    tabelaAparelhos.DataSource = cmd.ExecuteReader();
+                }
+            }
         }
     }
 }

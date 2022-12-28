@@ -28,12 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panelBotoes = new System.Windows.Forms.Panel();
             this.btnExtrato = new System.Windows.Forms.Button();
             this.btnOSCliente = new System.Windows.Forms.Button();
             this.btnAparelhos = new System.Windows.Forms.Button();
             this.btnVoltar = new System.Windows.Forms.Button();
             this.panelSuperior = new System.Windows.Forms.Panel();
+            this.txtCep = new System.Windows.Forms.MaskedTextBox();
+            this.txtRgInscricao = new System.Windows.Forms.MaskedTextBox();
+            this.txtCpfCnpj = new System.Windows.Forms.MaskedTextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.lblTipoPessoa = new System.Windows.Forms.Label();
+            this.txtTel2 = new System.Windows.Forms.MaskedTextBox();
+            this.txtTel1 = new System.Windows.Forms.MaskedTextBox();
             this.txtNum = new System.Windows.Forms.TextBox();
             this.lblNum = new System.Windows.Forms.Label();
             this.txtComplemento = new System.Windows.Forms.TextBox();
@@ -49,24 +57,21 @@
             this.txtCidade = new System.Windows.Forms.TextBox();
             this.lblCidade = new System.Windows.Forms.Label();
             this.btnPesquisarCep = new System.Windows.Forms.Button();
-            this.txtCep = new System.Windows.Forms.TextBox();
             this.lblCep = new System.Windows.Forms.Label();
-            this.txtRgInscricao = new System.Windows.Forms.TextBox();
             this.lblRgInscricao = new System.Windows.Forms.Label();
-            this.txtTel2 = new System.Windows.Forms.TextBox();
             this.lblTel2 = new System.Windows.Forms.Label();
-            this.txtTel1 = new System.Windows.Forms.TextBox();
             this.lblTel1 = new System.Windows.Forms.Label();
-            this.txtCpfCnpj = new System.Windows.Forms.TextBox();
             this.lblCpfCnpj = new System.Windows.Forms.Label();
             this.lblNome = new System.Windows.Forms.Label();
             this.txtNomeCliente = new System.Windows.Forms.TextBox();
             this.panelInferior = new System.Windows.Forms.Panel();
             this.btnSalvarProsseguir = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.panelBotoes.SuspendLayout();
             this.panelSuperior.SuspendLayout();
             this.panelInferior.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // panelBotoes
@@ -95,6 +100,7 @@
             this.btnExtrato.TabIndex = 8;
             this.btnExtrato.Text = "Extrato do Cliente";
             this.btnExtrato.UseVisualStyleBackColor = false;
+            this.btnExtrato.Click += new System.EventHandler(this.btnExtrato_Click);
             // 
             // btnOSCliente
             // 
@@ -143,6 +149,13 @@
             // panelSuperior
             // 
             this.panelSuperior.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelSuperior.Controls.Add(this.txtCep);
+            this.panelSuperior.Controls.Add(this.txtRgInscricao);
+            this.panelSuperior.Controls.Add(this.txtCpfCnpj);
+            this.panelSuperior.Controls.Add(this.comboBox1);
+            this.panelSuperior.Controls.Add(this.lblTipoPessoa);
+            this.panelSuperior.Controls.Add(this.txtTel2);
+            this.panelSuperior.Controls.Add(this.txtTel1);
             this.panelSuperior.Controls.Add(this.txtNum);
             this.panelSuperior.Controls.Add(this.lblNum);
             this.panelSuperior.Controls.Add(this.txtComplemento);
@@ -158,15 +171,10 @@
             this.panelSuperior.Controls.Add(this.txtCidade);
             this.panelSuperior.Controls.Add(this.lblCidade);
             this.panelSuperior.Controls.Add(this.btnPesquisarCep);
-            this.panelSuperior.Controls.Add(this.txtCep);
             this.panelSuperior.Controls.Add(this.lblCep);
-            this.panelSuperior.Controls.Add(this.txtRgInscricao);
             this.panelSuperior.Controls.Add(this.lblRgInscricao);
-            this.panelSuperior.Controls.Add(this.txtTel2);
             this.panelSuperior.Controls.Add(this.lblTel2);
-            this.panelSuperior.Controls.Add(this.txtTel1);
             this.panelSuperior.Controls.Add(this.lblTel1);
-            this.panelSuperior.Controls.Add(this.txtCpfCnpj);
             this.panelSuperior.Controls.Add(this.lblCpfCnpj);
             this.panelSuperior.Controls.Add(this.lblNome);
             this.panelSuperior.Controls.Add(this.txtNomeCliente);
@@ -177,12 +185,74 @@
             this.panelSuperior.Size = new System.Drawing.Size(817, 492);
             this.panelSuperior.TabIndex = 1;
             // 
+            // txtCep
+            // 
+            this.txtCep.HidePromptOnLeave = true;
+            this.txtCep.Location = new System.Drawing.Point(136, 292);
+            this.txtCep.Mask = "99999-999";
+            this.txtCep.Name = "txtCep";
+            this.txtCep.Size = new System.Drawing.Size(223, 27);
+            this.txtCep.TabIndex = 60;
+            // 
+            // txtRgInscricao
+            // 
+            this.txtRgInscricao.Location = new System.Drawing.Point(392, 162);
+            this.txtRgInscricao.Name = "txtRgInscricao";
+            this.txtRgInscricao.Size = new System.Drawing.Size(241, 27);
+            this.txtRgInscricao.TabIndex = 59;
+            // 
+            // txtCpfCnpj
+            // 
+            this.txtCpfCnpj.Location = new System.Drawing.Point(136, 159);
+            this.txtCpfCnpj.Name = "txtCpfCnpj";
+            this.txtCpfCnpj.Size = new System.Drawing.Size(223, 27);
+            this.txtCpfCnpj.TabIndex = 58;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Física",
+            "Jurídica"});
+            this.comboBox1.Location = new System.Drawing.Point(495, 104);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(138, 28);
+            this.comboBox1.TabIndex = 57;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // lblTipoPessoa
+            // 
+            this.lblTipoPessoa.AutoSize = true;
+            this.lblTipoPessoa.Location = new System.Drawing.Point(495, 77);
+            this.lblTipoPessoa.Name = "lblTipoPessoa";
+            this.lblTipoPessoa.Size = new System.Drawing.Size(87, 20);
+            this.lblTipoPessoa.TabIndex = 56;
+            this.lblTipoPessoa.Text = "Tipo Pessoa";
+            // 
+            // txtTel2
+            // 
+            this.txtTel2.Location = new System.Drawing.Point(390, 226);
+            this.txtTel2.Mask = "(99)99999-9999";
+            this.txtTel2.Name = "txtTel2";
+            this.txtTel2.Size = new System.Drawing.Size(243, 27);
+            this.txtTel2.TabIndex = 55;
+            // 
+            // txtTel1
+            // 
+            this.txtTel1.Location = new System.Drawing.Point(136, 226);
+            this.txtTel1.Mask = "(99)99999-9999";
+            this.txtTel1.Name = "txtTel1";
+            this.txtTel1.Size = new System.Drawing.Size(223, 27);
+            this.txtTel1.TabIndex = 54;
+            this.txtTel1.TextChanged += new System.EventHandler(this.txtTel1_TextChanged);
+            // 
             // txtNum
             // 
             this.txtNum.Location = new System.Drawing.Point(539, 435);
             this.txtNum.Name = "txtNum";
             this.txtNum.Size = new System.Drawing.Size(94, 27);
             this.txtNum.TabIndex = 53;
+            this.txtNum.TextChanged += new System.EventHandler(this.txtNum_TextChanged);
             // 
             // lblNum
             // 
@@ -199,6 +269,7 @@
             this.txtComplemento.Name = "txtComplemento";
             this.txtComplemento.Size = new System.Drawing.Size(136, 27);
             this.txtComplemento.TabIndex = 51;
+            this.txtComplemento.TextChanged += new System.EventHandler(this.txtComplemento_TextChanged);
             // 
             // lblComplemento
             // 
@@ -215,6 +286,7 @@
             this.txtRuaLogradouro.Name = "txtRuaLogradouro";
             this.txtRuaLogradouro.Size = new System.Drawing.Size(223, 27);
             this.txtRuaLogradouro.TabIndex = 49;
+            this.txtRuaLogradouro.TextChanged += new System.EventHandler(this.txtRuaLogradouro_TextChanged);
             // 
             // lblRuaLogradouro
             // 
@@ -229,8 +301,9 @@
             // 
             this.txtEmail.Location = new System.Drawing.Point(136, 105);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(497, 27);
+            this.txtEmail.Size = new System.Drawing.Size(343, 27);
             this.txtEmail.TabIndex = 47;
+            this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
             // 
             // lblEmail
             // 
@@ -244,10 +317,39 @@
             // cbUF
             // 
             this.cbUF.FormattingEnabled = true;
+            this.cbUF.Items.AddRange(new object[] {
+            "AC",
+            "AL",
+            "AP",
+            "AM",
+            "BA",
+            "CE",
+            "DF",
+            "ES",
+            "GO",
+            "MA",
+            "MT",
+            "MS",
+            "MG",
+            "PA",
+            "PB",
+            "PR",
+            "PE",
+            "PI",
+            "RJ",
+            "RN",
+            "RS",
+            "RO",
+            "RR",
+            "SC",
+            "SP",
+            "SE",
+            "TO"});
             this.cbUF.Location = new System.Drawing.Point(495, 291);
             this.cbUF.Name = "cbUF";
             this.cbUF.Size = new System.Drawing.Size(138, 28);
             this.cbUF.TabIndex = 45;
+            this.cbUF.SelectedIndexChanged += new System.EventHandler(this.cbUF_SelectedIndexChanged);
             // 
             // lblUF
             // 
@@ -264,6 +366,7 @@
             this.txtBairro.Name = "txtBairro";
             this.txtBairro.Size = new System.Drawing.Size(248, 27);
             this.txtBairro.TabIndex = 43;
+            this.txtBairro.TextChanged += new System.EventHandler(this.txtBairro_TextChanged);
             // 
             // lblBairro
             // 
@@ -280,6 +383,7 @@
             this.txtCidade.Name = "txtCidade";
             this.txtCidade.Size = new System.Drawing.Size(223, 27);
             this.txtCidade.TabIndex = 41;
+            this.txtCidade.TextChanged += new System.EventHandler(this.txtCidade_TextChanged);
             // 
             // lblCidade
             // 
@@ -298,13 +402,7 @@
             this.btnPesquisarCep.TabIndex = 39;
             this.btnPesquisarCep.Text = "Pesquisar";
             this.btnPesquisarCep.UseVisualStyleBackColor = true;
-            // 
-            // txtCep
-            // 
-            this.txtCep.Location = new System.Drawing.Point(136, 296);
-            this.txtCep.Name = "txtCep";
-            this.txtCep.Size = new System.Drawing.Size(223, 27);
-            this.txtCep.TabIndex = 38;
+            this.btnPesquisarCep.Click += new System.EventHandler(this.btnPesquisarCep_Click);
             // 
             // lblCep
             // 
@@ -315,14 +413,6 @@
             this.lblCep.TabIndex = 37;
             this.lblCep.Text = "CEP";
             // 
-            // txtRgInscricao
-            // 
-            this.txtRgInscricao.Location = new System.Drawing.Point(385, 159);
-            this.txtRgInscricao.MaxLength = 14;
-            this.txtRgInscricao.Name = "txtRgInscricao";
-            this.txtRgInscricao.Size = new System.Drawing.Size(248, 27);
-            this.txtRgInscricao.TabIndex = 36;
-            // 
             // lblRgInscricao
             // 
             this.lblRgInscricao.AutoSize = true;
@@ -331,13 +421,6 @@
             this.lblRgInscricao.Size = new System.Drawing.Size(152, 20);
             this.lblRgInscricao.TabIndex = 35;
             this.lblRgInscricao.Text = "RG/Inscrição Estadual";
-            // 
-            // txtTel2
-            // 
-            this.txtTel2.Location = new System.Drawing.Point(385, 222);
-            this.txtTel2.Name = "txtTel2";
-            this.txtTel2.Size = new System.Drawing.Size(248, 27);
-            this.txtTel2.TabIndex = 34;
             // 
             // lblTel2
             // 
@@ -348,13 +431,6 @@
             this.lblTel2.TabIndex = 33;
             this.lblTel2.Text = "Tel2";
             // 
-            // txtTel1
-            // 
-            this.txtTel1.Location = new System.Drawing.Point(136, 222);
-            this.txtTel1.Name = "txtTel1";
-            this.txtTel1.Size = new System.Drawing.Size(223, 27);
-            this.txtTel1.TabIndex = 32;
-            // 
             // lblTel1
             // 
             this.lblTel1.AutoSize = true;
@@ -363,14 +439,6 @@
             this.lblTel1.Size = new System.Drawing.Size(36, 20);
             this.lblTel1.TabIndex = 31;
             this.lblTel1.Text = "Tel1";
-            // 
-            // txtCpfCnpj
-            // 
-            this.txtCpfCnpj.Location = new System.Drawing.Point(136, 159);
-            this.txtCpfCnpj.MaxLength = 14;
-            this.txtCpfCnpj.Name = "txtCpfCnpj";
-            this.txtCpfCnpj.Size = new System.Drawing.Size(223, 27);
-            this.txtCpfCnpj.TabIndex = 30;
             // 
             // lblCpfCnpj
             // 
@@ -394,6 +462,7 @@
             // 
             this.txtNomeCliente.Location = new System.Drawing.Point(136, 47);
             this.txtNomeCliente.Name = "txtNomeCliente";
+            this.txtNomeCliente.ReadOnly = true;
             this.txtNomeCliente.Size = new System.Drawing.Size(497, 27);
             this.txtNomeCliente.TabIndex = 28;
             // 
@@ -431,6 +500,10 @@
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
+            // 
             // FormClienteDefinitivo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -448,6 +521,7 @@
             this.panelSuperior.ResumeLayout(false);
             this.panelSuperior.PerformLayout();
             this.panelInferior.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -474,15 +548,10 @@
         private TextBox txtCidade;
         private Label lblCidade;
         private Button btnPesquisarCep;
-        private TextBox txtCep;
         private Label lblCep;
-        private TextBox txtRgInscricao;
         private Label lblRgInscricao;
-        private TextBox txtTel2;
         private Label lblTel2;
-        private TextBox txtTel1;
         private Label lblTel1;
-        private TextBox txtCpfCnpj;
         private Label lblCpfCnpj;
         private Label lblNome;
         private TextBox txtNomeCliente;
@@ -490,5 +559,13 @@
         private Button btnOSCliente;
         private Button btnAparelhos;
         private Button btnVoltar;
+        private ErrorProvider errorProvider;
+        private MaskedTextBox txtTel2;
+        private MaskedTextBox txtTel1;
+        private MaskedTextBox txtRgInscricao;
+        private MaskedTextBox txtCpfCnpj;
+        private ComboBox comboBox1;
+        private Label lblTipoPessoa;
+        private MaskedTextBox txtCep;
     }
 }

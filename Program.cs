@@ -13,7 +13,8 @@ namespace Sistema_OS
             ApplicationConfiguration.Initialize();
             //Application.Run(new LoginView());
            
-            Application.Run(new FormClienteDefinitivo());
+            Application.Run(new FormStatusOS());
+
         }
     }
 }

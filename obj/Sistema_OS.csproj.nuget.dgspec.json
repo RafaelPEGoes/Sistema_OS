@@ -47,6 +47,14 @@
             "MySql.Data": {
               "target": "Package",
               "version": "[8.0.30, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            },
+            "RestSharp": {
+              "target": "Package",
+              "version": "[108.0.2, )"
             }
           },
           "imports": [

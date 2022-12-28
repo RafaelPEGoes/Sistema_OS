@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "fOkKHE+ivY1vVrx3Zf2Zf/9MP4P/3GUbmwLdJeQ7OgkHZhG4FOLYiAO61hbZOAGLpUc2dqTmK2rIdJ8ZSji7Jw==",
+  "dgSpecHash": "77g8WcgG/RuZOtLPnLFzmA7ruyFhoPcM6v28/FOOCdpZ/8rOV8Mg6USCMYuNVE6zQ7bhK0yQ4tkPA6OAmC1WYQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Rafael\\Desktop\\C# Workspace\\Sistema_OS\\Sistema_OS\\Sistema_OS.csproj",
   "expectedPackageFiles": [
@@ -12,7 +12,9 @@
     "C:\\Users\\Rafael\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\Rafael\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\Rafael\\.nuget\\packages\\mysql.data\\8.0.30\\mysql.data.8.0.30.nupkg.sha512",
+    "C:\\Users\\Rafael\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\Rafael\\.nuget\\packages\\portable.bouncycastle\\1.9.0\\portable.bouncycastle.1.9.0.nupkg.sha512",
+    "C:\\Users\\Rafael\\.nuget\\packages\\restsharp\\108.0.2\\restsharp.108.0.2.nupkg.sha512",
     "C:\\Users\\Rafael\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
     "C:\\Users\\Rafael\\.nuget\\packages\\system.configuration.configurationmanager\\4.4.1\\system.configuration.configurationmanager.4.4.1.nupkg.sha512",
     "C:\\Users\\Rafael\\.nuget\\packages\\system.drawing.common\\4.7.0\\system.drawing.common.4.7.0.nupkg.sha512",

@@ -21,8 +21,8 @@ namespace Sistema_OS
             InitializeComponent();
             maxWidth = Screen.PrimaryScreen.WorkingArea.Width;
             maxHeight = Screen.PrimaryScreen.WorkingArea.Height;
-            formWidth = Convert.ToInt32(0.5 * maxWidth);
-            formHeight = Convert.ToInt32(0.4 * maxHeight);
+            formWidth = (int)(0.5 * maxWidth);
+            formHeight = (int)(0.4 * maxHeight);
             this.Width = formWidth;
             this.Height = formHeight;
             this.MaximumSize = new Size(maxWidth, maxHeight);
@@ -37,21 +37,19 @@ namespace Sistema_OS
 
         private void FormPesquisaCliente_Load(object sender, EventArgs e)
         {
-            this.container.SplitterDistance = Convert.ToInt32(0.2 * formHeight);
+            this.container.SplitterDistance = (int)(0.2 * formHeight);
             this.container.Panel1.BackColor = Color.Orange;
-            tabelaCliente.Size = new Size(Convert.ToInt32(0.98 * container.Panel2.Width), Convert.ToInt32(0.95 * container.Panel2.Height));
-            tabelaCliente.Location = new Point(Convert.ToInt32(0.025 * container.Panel2.Height), Convert.ToInt32(0.025 * container.Panel2.Height));
+            tabelaCliente.Size = new Size((int)(0.98 * container.Panel2.Width), (int)(0.95 * container.Panel2.Height));
+            tabelaCliente.Location = new Point((int)(0.025 * container.Panel2.Height), (int)(0.025 * container.Panel2.Height));
 
-            txtNomeCliente.Width = Convert.ToInt32(0.5 * container.Panel1.Width);
-            txtNomeCliente.Location = new Point(Convert.ToInt32(0.05 * container.Panel1.Width), Convert.ToInt32((container.Panel1.Height - txtNomeCliente.Height) / 2));
-            lblNomeCliente.Location = new Point(Convert.ToInt32(0.05 * container.Panel1.Width), txtNomeCliente.Top);
+            txtNomeCliente.Width = (int)(0.5 * container.Panel1.Width);
+            txtNomeCliente.Location = new Point((int)(0.05 * container.Panel1.Width), (int)((container.Panel1.Height - txtNomeCliente.Height) / 2));
+            lblNomeCliente.Location = new Point((int)(0.05 * container.Panel1.Width), txtNomeCliente.Top);
 
-
-
-            tabelaCliente.Columns["DATA"].Width = Convert.ToInt32(0.15 * tabelaCliente.Width);
-            tabelaCliente.Columns["CIDADE"].Width = Convert.ToInt32(0.2 * tabelaCliente.Width);
-            tabelaCliente.Columns["TELEFONE"].Width = Convert.ToInt32(0.2 * tabelaCliente.Width);
-            tabelaCliente.Columns["UF"].Width = Convert.ToInt32(0.1 * tabelaCliente.Width);
+            tabelaCliente.Columns["DATA"].Width = (int)(0.15 * tabelaCliente.Width);
+            tabelaCliente.Columns["CIDADE"].Width = (int)(0.2 * tabelaCliente.Width);
+            tabelaCliente.Columns["TELEFONE"].Width = (int)(0.2 * tabelaCliente.Width);
+            tabelaCliente.Columns["UF"].Width = (int)(0.1 * tabelaCliente.Width);
             tabelaCliente.Columns["NOME"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
 
